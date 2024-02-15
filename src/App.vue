@@ -1,50 +1,43 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+  <AppHeader> </AppHeader>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
+<div class="flex flex-row justify-between px-[24px] pb-4">
+  <CurrentWeather > </CurrentWeather>
+  <ForecastWeather></ForecastWeather>
+  <ChartDay></ChartDay>
+</div>
+<div class="pt-[10px] flex flex-row justify-between px-[24px] pb-4">
+  <OverView></OverView>
+  <Picture></Picture>
+  <RecentCity></RecentCity>
+</div>
 
-  <main>
-    <div class="bg-red-700 ">
-      salam feri and mohi n jhhgjgjkh
-    </div>
-    <TheWelcome />
-  </main>
 </template>
 
+<script >
+import AppHeader from "./components/AppHeaderTOP.vue"
+import CurrentWeather from "./components/ViweWheather.vue"
+import ChartDay from "./components/Chart.vue"
+import OverView from "./components/OverView.vue"
+import Picture from "./components/Picture.vue"
+import RecentCity from "./components/RecentlyCity.vue"
+import axios from 'axios'
+import ForecastWeather from "./components/ForecastWeather.vue"
+
+export default{
+name:'App',
+components:{
+  AppHeader,
+  CurrentWeather, ForecastWeather, ChartDay,
+  OverView, Picture, RecentCity,
+  ForecastWeather
+},
+}
+
+</script>
 <style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
-</style>
+*{
+background:#111015;
+margin: 0;
+padding: 0;
+}</style>
